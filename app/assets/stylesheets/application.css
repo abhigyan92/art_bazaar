@@ -15,3 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+u{
+	height:2000px;
+	width:250px;
+}

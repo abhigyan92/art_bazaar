@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'customers/new'
+
+  get 'customers/create'
+
   get 'order_items/create'
 
   get 'order_items/update'
@@ -22,6 +26,8 @@ Rails.application.routes.draw do
   resources :mains
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  #resources :orders, only:[:new,:create]
+  resources :customers, only:[:new,:create]
 
 
   # You can have the root of your site routed with "root"

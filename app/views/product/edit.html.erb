@@ -4,6 +4,18 @@
 <h1>Edit products</h1>
 <div class="col-md-6 col-md-offset-3">
 <%= form_for(@product, html: { multipart: true }) do |f| %>
+<% if @product.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@product.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
   
   <%= f.label :Name %>
   <%= f.text_field :name, class: 'form-control' %>
