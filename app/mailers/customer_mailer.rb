@@ -14,7 +14,7 @@ class CustomerMailer < ApplicationMailer
   def admin_notify(admin)
   	@admin = admin
 
-    mail to: "akshatriumphs@gmail.com",subject: "An Order has beed placed"
+    mail to: "abhigyan111190@gmail.com",subject: "An Order has beed placed"
 
   end
 
