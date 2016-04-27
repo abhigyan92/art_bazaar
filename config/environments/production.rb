@@ -31,6 +31,14 @@ config.action_mailer.smtp_settings = {
   password: "1290819100084",
   domain: 'gmail.com'
 }
+config.after_initialize do
+  ActiveMerchant::Billing::Base.mode = :production
+  ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+    :login => "seller_1229899173_biz_api1.railscasts.com",
+    :password => "FXWU58S7KXFC6HBE",
+    :signature => "AGjv6SW.mTiKxtkm6L9DcSUCUgePAUDQ3L-kTdszkPG8mRfjaRZDYtSu"
+  )
+end
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
