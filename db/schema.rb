@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422142901) do
+ActiveRecord::Schema.define(version: 20160427044627) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
@@ -69,6 +69,30 @@ ActiveRecord::Schema.define(version: 20160422142901) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "active",      default: false
+  end
+
+  create_table "transaction_details", force: :cascade do |t|
+    t.integer  "transaction_id"
+    t.string   "action"
+    t.integer  "amount"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string   "new"
+    t.integer  "order_id"
+    t.string   "ip_address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

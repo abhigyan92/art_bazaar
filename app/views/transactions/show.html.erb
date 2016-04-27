@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>New:</strong>
+  <%= @transaction.new %>
+</p>
+
+<p>
+  <strong>Cart:</strong>
+  <%= @transaction.cart_id %>
+</p>
+
+<p>
+  <strong>Ip address:</strong>
+  <%= @transaction.ip_address %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @transaction.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @transaction.last_name %>
+</p>
+
+<p>
+  <strong>Card type:</strong>
+  <%= @transaction.card_type %>
+</p>
+
+<p>
+  <strong>Card expires on:</strong>
+  <%= @transaction.card_expires_on %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

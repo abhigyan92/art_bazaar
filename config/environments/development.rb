@@ -30,6 +30,15 @@ Rails.application.configure do
   password: "1290819100084"
 }
 
+config.after_initialize do
+  ActiveMerchant::Billing::Base.mode = :test
+  ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+    :login => "seller_1229899173_biz_api1.railscasts.com",
+    :password => "FXWU58S7KXFC6HBE",
+    :signature => "AGjv6SW.mTiKxtkm6L9DcSUCUgePAUDQ3L-kTdszkPG8mRfjaRZDYtSu"
+  )
+end
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

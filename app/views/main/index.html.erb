@@ -1,15 +1,23 @@
 <div class="container">
 <div class="row">
+	<%i=0%>
+	<div class="row">
 <% @products.each do |product| %>
-<div class="col-md-4">
-	<span><%= image_tag(product.image.url,
-        class:"img-thumbnail",height:'200px',
-	width:'100%') %></span>
-	<h3><%= product.name %></h3>
+<div class="col-md-4 products-section text-center">
+	<%i=i+1%>
+	<span><%= image_tag(product.image.url,class:"product-image"
+        ) %></span>
+	<h3 class="text-center"><%= product.name %></h3>
 	<p><%= product.description %></p>
-	<p><%=product.price%></p>
-	<%= link_to "View details", main_path(:id=>product.id)%>
+	<p><span>Price:</span><%=product.price%></p>
+	<%= link_to "View details", main_path(:id=>product.id),class:"btn btn-primary"%>
 </div>
+	<%if i%3==0%>
+	   </div>
+	   <div class="row">
+		<%i=0%>
+	<%end%>
+
 <% end %>
 </div>
 </div>
