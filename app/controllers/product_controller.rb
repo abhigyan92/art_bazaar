@@ -53,6 +53,7 @@ class ProductController < ApplicationController
 
 	def order_details
 		@customers=Customer.all
+		@transactions=Transaction.all
 	end
 	private
 

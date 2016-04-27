@@ -15,12 +15,16 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params)
     @transaction.ip_address = request.remote_ip
     @transaction.total=current_order.subtotal
+    @transaction.order_id=session[:order_id]
+    @admin=Admin.first
 
 
     
       if @transaction.save
         if @transaction.purchase
           session.delete(:order_id)
+         # CustomerMailer.order_confirmation(@transaction).deliver_now
+         CustomerMailer.admin_notify(@admin).deliver_now
           render :action => "success"
         else
           render :action => "failure"
