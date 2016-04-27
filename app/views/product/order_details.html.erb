@@ -49,6 +49,7 @@
       <th>orders</th>
       <th>Time</th>
       <th>subtotal</th>
+      <th>Payment Status</th>
     </tr>
   </thead>
 
@@ -72,7 +73,14 @@
           <%=Order.find(id).subtotal%>
           <%end%>
         </td>
+        
+        <td><%if transaction.id>=4%>
+          <%=transaction.transaction_details.first.success%>
+          <%end%>
+
+        </td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
