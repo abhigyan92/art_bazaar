@@ -2,7 +2,7 @@
 
 one:
   new: MyString
-  cart_id: 1
+  order_id: 1
   ip_address: MyString
   first_name: MyString
   last_name: MyString
@@ -11,7 +11,7 @@ one:
 
 two:
   new: MyString
-  cart_id: 1
+  order_id: 1
   ip_address: MyString
   first_name: MyString
   last_name: MyString
