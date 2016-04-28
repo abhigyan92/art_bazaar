@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ArtBazaar</title>
+  <title>ArtBazaar|<%= yield(:title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -21,7 +21,11 @@
         <h1><%= link_to "ArtBazaar", root_path %></h1>
       </div>
       <div class="col-xs-6 text-right">
-        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+        <div class="nav">
+        <%= link_to "About", "#", method: "get",class:"about-link" %>
+
+       <%= render 'layouts/cart_text' %>
+     </div>
       </div>
     </div>
     <hr>

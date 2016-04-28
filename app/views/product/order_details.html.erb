@@ -1,5 +1,8 @@
-<h1>Cash on delivery orders</h1>
-<table>
+<div class="container">
+<h1 class="text-center">Cash on delivery orders</h1>
+<div class="table-responsive">
+
+<table class="table">
   <thead>
     <tr>
       <th>Customer Name</th>
@@ -24,7 +27,7 @@
         	<%if !id.nil?%>
         	<%order_items=OrderItem.where(order_id:id)%>
         	<% order_items.each do |order_item| %>
-        	<%=Product.find(order_item.product_id).name%>
+        	<%=Product.find(order_item.product_id).name+","%>
         	<%end%>
         	<%end%>
         </td>	
@@ -38,8 +41,10 @@
     <% end %>
   </tbody>
 </table>
-<h1>Paypal orders</h1>
-<table>
+</div>
+<h1 class="text-center">Paypal orders</h1>
+<div class="table-responsive">
+<table class="table">
   <thead>
     <tr>
       <th>Customer Name</th>
@@ -63,7 +68,7 @@
           <%if !id.nil?%>
           <%order_items=OrderItem.where(order_id:id)%>
           <% order_items.each do |order_item| %>
-          <%=Product.find(order_item.product_id).name%>
+          <%=Product.find(order_item.product_id).name+","%>
           <%end%>
           <%end%>
         </td> 
@@ -84,3 +89,5 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>

@@ -1,1 +1,1 @@
-<%= link_to "#{current_order.order_items.size} Items in Cart ", cart_path, class: "btn btn-link" %>
+<%= link_to "<i class=\"fa fa-shopping-cart \"> #{current_order.order_items.size} items</i>".html_safe, cart_path, class: "btn btn-primary btn-cart" %>

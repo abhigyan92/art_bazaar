@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 * {
   box-sizing: border-box;
 }
@@ -25,4 +26,16 @@ padding:10px;
 }
 .btn-login{
 	margin-top:10px;
+}
+.nav{
+	
+	margin-top:30px;
+}
+.fa-shopping-cart{
+	color:white;
+	font-size:20px;
+}
+
+.about-link{
+	margin-right:15px;
 }
